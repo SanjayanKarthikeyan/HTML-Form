@@ -7,15 +7,11 @@ function setTitle(tagname, attname, attvalue) {
   return formbody;
 }
 
-//-----------------------------------------
-
 let maindiv = document.createElement("div");
 maindiv.classList.add( "div", "form-row", "d-flex", "justify-content-center", "col-md-8");
 
 let titlediv1 = document.createElement("div");
 titlediv1.classList.add("form-group", "col-md-10");
-
-//---------------------------------------------
 
 let div1h1 = titledivchild("h1", "id", "title", "DOM HTML-FORM :");
 let div1p = titledivchild("p","id","description",
@@ -27,8 +23,6 @@ function titledivchild(tagname, attname, attvalue, contenttext) {
   titledivchild.innerHTML = contenttext;
   return titledivchild;
 }
-
-//-----------------------------------------------------
 
 let fname_div = sixdiv("div", "form-group", "col-md-5");
 let lname_div = sixdiv("div", "form-group", "col-md-5");
@@ -45,8 +39,6 @@ function sixdiv(tagname, divclass1, divclass2) {
   return six_div_element;
 }
 
-//---------------------------------------------------
-
 let fname_label = sixlabel("label", "for", "firstname", "FIRST NAME:");
 let lname_label = sixlabel("label", "for", "lastname", "LAST NAME:");
 let address_label = sixlabel("label", "for", "address", "ADDRESS:");
@@ -60,8 +52,6 @@ function sixlabel(tagname, attname, attvalue, contenttext) {
   six_label_element.innerHTML = contenttext;
   return six_label_element;
 }
-
-//------------------------------------------------------------------
 
 let fname_input = sixinput("input","type","text","class","form-control","id","first-name","placeholder","ENTER YOUR FIRSTNAME","required");
 
@@ -81,12 +71,8 @@ function sixinput( tagname, attname1, attvalue1 , attname2, attvalue2, attname3,
   return six_inputtype;
 }
 
-//----------------------------------------------------------------
-
 let gender_p = document.createElement("p");
 gender_p.innerText = "GENDER:";
-
-//----------------------------------------------------------------
 
 let gender_div1 = genderdiv("div", "class", "gender");
 let gender_div2 = genderdiv("div", "class", "gender");
@@ -97,8 +83,6 @@ function genderdiv(tagname, attname, attvalue) {
   gender.setAttribute(attname, attvalue);
   return gender;
 }
-
-//----------------------------------------------------------------
 
 let inputmale = genderinput( "input","type","radio", "value", "male", "name", "gender", "id", "male", "required");
 let inputfemale = genderinput("input","type","radio","value","female","name","gender","id","female","required");
@@ -114,8 +98,6 @@ function genderinput(tagname,attname1,attvalue1,attname2,attvalue2,attname3,attv
   return gendertype;
 }
 
-//----------------------------------------------------------------
-
 let malelabel = genderlabel("label", "for", "male", "MALE");
 let femalelabel = genderlabel("label", "for", "female", "FEMALE");
 let otherslabel = genderlabel("label", "for", "others", "OTHERS");
@@ -127,13 +109,9 @@ function genderlabel(tagname, attname1, attvalue1, contenttext) {
   return genderLabel;
 }
 
-//----------------------------------------------------------------
-
 let food_label = document.createElement("label");
 food_label.setAttribute("for", "food");
 food_label.innerHTML = "FOOD ITEMS:";
-
-//----------------------------------------------------------------
 
 let food_div1 = fooditemsdiv("div");
 let food_div2 = fooditemsdiv("div");
@@ -146,8 +124,6 @@ function fooditemsdiv(tagname) {
 
   return foodItems;
 }
-
-//------------------------------------------------------------------
 
 let food_input1 = fooditemsinput("input","type","checkbox","name","food","value","French Cuisine: A Connoisseur’s Delight ","class","checkbox");
 let food_input2 = fooditemsinput("input", "type","checkbox","name","food","value","Japanese Cuisine: The Zen of Flavor ","class","checkbox");
@@ -164,7 +140,6 @@ function fooditemsinput(tagname,attname1, attvalue1, attname2, attvalue2, attnam
   return foodinput;
 }
 
-//----------------------------------------------------------------
 let food_label1 = fooditemslabel("label", "for", "food", "French Cuisine: A Connoisseur’s Delight");
 let food_label2 = fooditemslabel("label", "for", "food", "Japanese Cuisine: The Zen of Flavor");
 let food_label3 = fooditemslabel("label", "for", "food", "Indian Cuisine: A Feast of Heritage ");
@@ -178,12 +153,9 @@ function fooditemslabel(tagname, attname, attvalue, contenttext) {
   return foodlabel;
 }
 
-//----------------------------------------------------------------
-
 let button_div = document.createElement("div");
 button_div.classList.add("form-group", "col-md-10", "buttonstyle");
 
-//----------------------------------------------------------------
 let button1 = buttonele("button", "btn", "btn-primary", "innerbutton", "type", "submit", "id", "submit", "value", "SUBMIT", "SUBMIT");
 let button2 = buttonele( "button", "btn", "btn-primary", "innerbutton", "type", "reset", "id", "reset", "value", "RESET", "RESET");
 
@@ -196,7 +168,6 @@ function buttonele( tagname, class1, class2, class3, attname2, attvalue2, attnam
   buttons.innerHTML = contenttext;
   return buttons;
 }
-//----------------------------------------------------------------
 
 let table_div = document.createElement("div");
 table_div.classList.add("form-group", "col-md-10");
@@ -217,7 +188,6 @@ tablerow.setAttribute("id", "rowalign");
 let table_body = document.createElement("tbody");
 table_body.setAttribute("id", "table-styles");
 
-//----------------------------------------------------------------
 
 let th1 = tableheader("th", "scope", "col", "FIRST_NAME");
 let th2 = tableheader("th", "scope", "col", "LAST_NAME");
@@ -234,10 +204,6 @@ function tableheader(tagname, attname, attvalue, contenttext) {
   tablecol.innerHTML = contenttext;
   return tablecol;
 }
-//------------------------------------------------------------
-
-//? appending...
-
 document.body.append(maincontainer);
 maincontainer.append(formLayout);
 formLayout.append(titlecontent);
@@ -272,17 +238,10 @@ tabletag.append(tablehead, table_body);
 tablehead.append(tablerow);
 tablerow.append(th1, th2, th3, th4, th5, th6, th7, th8);
 
-//----------------------------------------------------------------
-
-//? Submit button preventing:-
-
 let prevent_button = document.getElementById("submit");
 prevent_button.addEventListener("click", (ele) => {
   ele.preventDefault();
 });
-
-//----------------------------------------------------------------
-//? SUBMIT BUTTON function:-
 
 button1.addEventListener("click", btnname);
 
@@ -294,23 +253,13 @@ function btnname() {
   let country_value = document.getElementById("country").value;
   let pincode_value = document.getElementById("pincode").value;
 
-  //----------------------------------------------------------------
-
-  //? creating row for table data:-
-
   let row1 = document.createElement("tr");
   table_body.append(row1);
-
-  //----------------------------------------------------------------
 
   let res = [];
   let male_value;
   let female_value;
   let others_value;
-
-  //----------------------------------------------------------
-
-  //? null input means..
 
   let null_value = [];
   let checkbox_value = document.getElementsByClassName("checkbox");
@@ -332,16 +281,11 @@ function btnname() {
   ) {
     alert("<< Please, Fill all the input fields >>");
   }
-  //-------------------------------------------------------------------------
-
-  //? Food items alert when less than 2:-
 
   if (null_value.length < 2) {
     alert("<<Please select minimum 2 Food items Out of 5>>");
   }
 
-  //------------------------------------------------------------------
-  //? Checking the input fields are filled and then appending them to the table...
   if (
     firstname_value !== "" &&
     lastname_value !== "" &&
@@ -352,22 +296,19 @@ function btnname() {
     (male_value !== "" || female_value !== "") &&
     null_value.length === 2
   ) {
-    //-------------------------------------------------------------------
-    //? creating the td elements:-
+   
     for (let j = 0; j < 8; j++) {
       let data = document.createElement("td");
       res.push(data);
     }
-    //-------------------------------------------------------------------
+ 
     res[0].append(firstname_value);
     res[1].append(lastname_value);
     res[2].append(address_value);
     res[3].append(state_value);
     res[4].append(country_value);
     res[5].append(pincode_value);
-    //-------------------------------------------------------------------
-    //? gender function:-
-
+ 
     if (male.checked) {
       male_value = document.getElementById("male").value;
       res[6].append(male_value);
@@ -380,16 +321,12 @@ function btnname() {
       others_value = document.getElementById("others").value;
       res[6].append(others_value);
     }
-    //-------------------------------------------------------------------
-    //? food items function:-
-
+  
     for (let k = 0; k < checkbox_value.length; k++) {
       if (checkbox_value[k].checked) {
         res[7].append(checkbox_value[k].value);
       }
     }
-    //-------------------------------------------------------------------
-    //? td appending...
 
     row1.append(res[0], res[1], res[2], res[3], res[4], res[5], res[6], res[7]);
   }
